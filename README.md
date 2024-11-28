@@ -8,6 +8,7 @@
     <img src="https://img.shields.io/badge/-Three_JS-black?style=for-the-badge&logoColor=white&logo=threedotjs&color=000000" alt="three.js" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
+## <a name="introduction">🤖 Introduction</a>
 
 this website with help you to make your resume with using Gemini Ai API
 in this Project i use clerck service for authentication so you can login with your gemail or your github account to social login
@@ -27,6 +28,13 @@ AI Resume Bulder develop with react js
 - Clerck
 - shadcn
 - Gemini AI API
+- 
+## 🚨 Tutorial
+
+- im landing page click on dashboard and social login
+- crate your new resume and enter your job title
+- 
+
 
 ## <a name="more">🚀 More</a>
 یه نکته ی مهم ! سرویس clerck و Gemini AI به دلیل تحریم ها با آی پی ایران کار نمیکنه پس برای وارد شدن حتما تحریم هارو دور بزنید 👉
