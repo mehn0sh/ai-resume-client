@@ -33,7 +33,11 @@ AI Resume Bulder develop with react js
 
 - im landing page click on dashboard and social login
 - crate your new resume and enter your job title
-- 
+- click on Theme button and choose the color that you want
+- Fill out each part of the section form
+-  🚨 dont forget in the end end of any section click on save and click next
+-  in summary section and experience section you can get help from Gemini Ai
+  you can delete,download , edit and view your resume in your dashboard!
 
 
 ## <a name="more">🚀 More</a>
