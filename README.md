@@ -1,8 +1,8 @@
 # AI Resume Builder with Gemini AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+this website with help you to make your resume with using Gemini Ai API
+in this Project i use clerck service for authentication so you can login with your gemail or your github account to social login
+in this project i use three js library so in landig page you can see 3D models
+also i use tailwind css and shadcn for a beautiful UI
+AI Resume Bulder develop with react js 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
