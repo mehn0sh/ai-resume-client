@@ -1,3 +1,5 @@
+<div align="center">
+
 <h3># AI Resume Builder with Gemini AI</h3>
   <br />
 
@@ -13,3 +15,4 @@ in this project i use three js library so in landig page you can see 3D models
 also i use tailwind css and shadcn for a beautiful UI
 AI Resume Bulder develop with react js 
 
+</div>
