@@ -1,4 +1,4 @@
-<div align="center">
+<div>
 
 <h3># AI Resume Builder with Gemini AI</h3>
   <br />
