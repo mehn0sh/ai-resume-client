@@ -7,13 +7,22 @@ import GlobalApi from "../../../../../service/GlobalApi";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { AIChatSession } from "../../../../../service/AiModel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
 const prompt =
-  "Job Title: {jobTitle} , Depends on job title give me list of  summery for 3 experience level, Mid Level and Freasher level in 3 -4 lines in array format, With summery and experience_level Field in JSON Format send this to me only and only in JSON format. ";
+  " Job titile: {jobTitle} , Depends on job title and {level of ecperience} give me 5-7 line for my experience in resume (Please do not add experince level and No JSON array) , give me result in text and dont use of Ditto mark and any double quotation give me it like a normal text and paragraph"; // const prompt =
 const Summary = ({ setnextButton }) => {
   const { resumeInfo, setresumeInfo } = useContext(ResumeInfoContext);
   const [summery, setsummery] = useState();
   const [Loading, setLoading] = useState();
-  const [AIGeneratedSummaryList, setAIGeneratedSummaryList] = useState();
+  const [experienceLevel, setexperienceLevel] = useState();
+  const [openDialog, setopenDialog] = useState(false);
   const params = useParams();
   useEffect(() => {
     // setnextButton(false);
@@ -21,13 +30,15 @@ const Summary = ({ setnextButton }) => {
   }, [summery]);
   const GenerateSummaryFromAi = async () => {
     setLoading(true);
-    const PROMPT = prompt.replace("{jobTitle}", resumeInfo?.jobTitle);
-    console.log(resumeInfo?.jobTitle, PROMPT);
+    const PROMPT = prompt.replace("{jobTitle}", resumeInfo?.jobTitle).replace("{level of ecperience}",experienceLevel);
     const result = await AIChatSession.sendMessage(PROMPT);
-
-    setAIGeneratedSummaryList(JSON.parse(result.response.text()));
-    console.log(result.response.text());
-    console.log(JSON.parse(result.response.text()));
+    const resp = result.response.text();
+    const finalResult = resp
+      .replace("[", "")
+      .replace("]", "")
+      .replace("{", "")
+      .replace("}", "");
+    setsummery(finalResult);
     setLoading(false);
   };
   const onSave = (e) => {
@@ -58,14 +69,14 @@ const Summary = ({ setnextButton }) => {
         <h2 className="font-bold text-lg">Summery</h2>
         <p>Add Summery for your job title</p>
         <form className="mt-7" onSubmit={onSave}>
-          <div className="flex justify-between items-end">
+          <div className="flex justify-between flex-col xs:flex-row xs:items-end gap-y-1">
             <label>Add Summery</label>
             <Button
               variant="outline"
               type="button"
               size="sm"
               className="border-primary text-primary flex gap-2"
-              onClick={() => GenerateSummaryFromAi()}
+              onClick={() => setopenDialog(true)}
             >
               <Brain className="h-4 w-4" />
               Generate from AI
@@ -85,27 +96,53 @@ const Summary = ({ setnextButton }) => {
           </div>
         </form>
       </div>
-      {AIGeneratedSummaryList ? (
-        <div className="mt-5">
-          <h2 className="font-bold text-lg">Suggestions</h2>
-          {AIGeneratedSummaryList?.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="p-5 shadow-lg my-4 rounded-lg cursor-pointer"
-                onClick={() => setsummery(item?.summary)}
-              >
-                <h2 className="font-bold my-1 text-primary">
-                  Level :{item?.experience_level}
-                </h2>
-                <p>{item?.summary}</p>
+
+      <Dialog open={openDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle></DialogTitle>
+            <DialogDescription>
+              <span>what is your level of experience?</span>
+              <span className="block border border-black my-1"></span>
+              <div className="flex flex-col">
+                <div className="flex items-center text-center  text-black gap-x-1 mt-3">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="junior"
+                    onChange={() => setexperienceLevel("junior")}
+                    className="mt-1"
+                  />
+                  <label htmlFor="junior">junior</label>
+                </div>
+                <div className="flex items-center text-center text-black gap-x-1 mt-3">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="mid level"
+                    onChange={() => setexperienceLevel("mid level")}
+                    className="mt-1"
+                  />
+                  <label htmlFor="mid level">mid level</label>
+                </div>
+                <div className="flex items-center text-center text-black gap-x-1 mt-3">
+                  <input
+                    type="radio"
+                    name="level"
+                    id="senior"
+                    onChange={() => setexperienceLevel("senior")}
+                    className="mt-1"
+                  />
+                  <label htmlFor="senior">senior</label>
+                </div>
               </div>
-            );
-          })}
-        </div>
-      ) : (
-        ""
-      )}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end gap-x-4">
+            <Button onClick={() => {GenerateSummaryFromAi(),setopenDialog(false)}}>Generate </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

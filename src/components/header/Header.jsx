@@ -7,7 +7,7 @@ const Header = () => {
   const { isSignedIn, isLoaded, user } = useUser();
   return (
     <header className="flex justify-between shadow-md p-3">
-      <img src="/logo.svg" width={100} height={100} />
+      <img src="/logo.svg" width={40} height={40} />
       {isLoaded && isSignedIn ? (
         <div className="flex gap-3">
           <Link to={"/dashboard"}>

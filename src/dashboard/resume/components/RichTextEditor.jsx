@@ -51,7 +51,7 @@ const RichTextEditor = ({ onRichTextEditorChange, index, defaultValue }) => {
   };
   return (
     <div>
-      <div className="flex justify-between my-4">
+      <div className="flex justify-between my-4 flex-col md:flex-row">
         <label>summary of your experience</label>
         <Button
           className="flex gap-2"

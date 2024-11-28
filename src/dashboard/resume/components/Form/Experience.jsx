@@ -100,7 +100,7 @@ const Experience = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs">Company Name</label>
+                  <label className="text-[10px] xs:text-xs">Company Name</label>
                   <Input
                     name="companyName"
                     onChange={(event) => handleChange(index, event)}
@@ -154,8 +154,8 @@ const Experience = () => {
             );
           })}
         </div>
-        <div className="flex justify-between">
-          <div className="flex gap-2">
+        <div className="flex flex-col justify-between lg:flex-row gap-y-3 ">
+          <div className="flex gap-2 flex-col lg:flex-row">
             <Button variant="outline" onClick={addNewExperience}>
               + Add More Experience
             </Button>

@@ -136,8 +136,8 @@ const Education = () => {
         })}
       </div>
 
-      <div className="flex justify-between">
-        <div className="flex gap-2">
+      <div className="flex justify-between flex-col xs:flex-row">
+        <div className="flex justify-between mb-4">
           <Button variant="outline" onClick={addNewEducation}>
             + Add More Education
           </Button>

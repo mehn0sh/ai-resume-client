@@ -68,7 +68,7 @@ export const AddResume = () => {
             <Button variant={"ghost"} onClick={() => setopenDialog(false)}>
               Cancel
             </Button>
-            <Button disabled={!resumeTitle || isLoading} onClick={() => onCreate()}>
+            <Button  disabled={!resumeTitle || isLoading} onClick={() => onCreate()}>
               {isLoading? <Loader2 className="animate-spin"/>:"create"}
             </Button>
           </div>

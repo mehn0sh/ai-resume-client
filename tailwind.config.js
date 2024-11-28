@@ -13,6 +13,10 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			tertiary: "#151030",
+			"black-100": "#100d25",
+			"black-200": "#090325",
+			"white-100": "#f3f3f3",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -23,10 +27,12 @@ export default {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
+  			// primary: {
+  			// 	DEFAULT: 'hsl(var(--primary))',
+  			// 	foreground: 'hsl(var(--primary-foreground))'
+  			// },
+			  primary: "#050816",
+
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
@@ -53,7 +59,16 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+		  boxShadow: {
+			cards: "0px 35px 120px -15px #211e35",
+		  },
+		  screens: {
+			xs: "450px",
+		  },
+		  backgroundImage: {
+			"hero-pattern": "url('/src/assets/herobg.png')",
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],
