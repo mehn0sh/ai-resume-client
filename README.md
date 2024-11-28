@@ -15,4 +15,18 @@ in this project i use three js library so in landig page you can see 3D models
 also i use tailwind css and shadcn for a beautiful UI
 AI Resume Bulder develop with react js 
 
+🚨 🚨## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- React.js
+- Three.js
+- React Three Fiber
+- React Three Drei
+- Email JS
+- Vite
+- Tailwind CSS
+- Clerck
+- shadcn
+- Gemini AI API
+
+
 </div>
