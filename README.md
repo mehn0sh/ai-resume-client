@@ -14,8 +14,7 @@ this website is responsive and help you to make your resume with using Gemini Ai
 in this Project i use clerck service for authentication so you can login with your gemail or your github account to social login
 in this project i use three js library so in landig page you can see 3D models
 also i use tailwind css and shadcn for a beautiful UI
-AI Resume Bulder develop with react js 
-
+AI Resume Bulder develop with react js and use Starapi CMS
 🚨 🚨## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - React.js
@@ -27,6 +26,7 @@ AI Resume Bulder develop with react js
 - Tailwind CSS
 - Clerck
 - shadcn
+- starpi CMS
 - Gemini AI API
 - 
 ## 🚨 Tutorial
